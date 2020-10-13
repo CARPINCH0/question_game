@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Welcome to the Question Game!</title>
+    </head>
+    <body>
+        <hi>Choose one of the games below</hi>
+        <p> 
+
+            <h2>Load Game</h2>
+            <ul>
+                {% for game in game_setup %}
+                <li>
+                    <a href="game/{{pick_game.id}}"> {{ game.Game_Name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </p>
+        <p>
+           Or Start a New Game
+           <p>
+            <h1>{{ question.question_text }}</h1>
+
+            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+            
+            <form action="{% url 'polls:vote' question.id %}" method="post">
+            {% csrf_token %}
+            {% for choice in question.choice_set.all %}
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+                <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+            {% endfor %}
+            <input type="submit" value="Vote">
+            </form>
+        </p>
+        </p>
+    </body>
+</html>
