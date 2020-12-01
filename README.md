@@ -5,6 +5,12 @@ Multiplayer game, where each player takes turns drawing a card from a pile, whic
 
 The idea is to build a prototype that doesn’t need to handle the operation in multiplayer to begin with, but can at least handle a random card being drawn, voting on a list and tallying those votes, attributing them to the different players.
 
+<h2> Execution</h2>
+
+
+<h2>Design</h2>
+detailed below are all the steps to the creation of the game in Django
+
 **Step 1** Create a model that holds all the players, that can be interacted with inside the page itself, to add or subtract players.
 
 Attributes of this model:
@@ -35,7 +41,12 @@ Game_History
 
 Example, after turn 0 of game 1:
 
-{{insert Table}}
+| game_id | turn | card_id | player_id | vote |
+|---------|------|---------|-----------|------|
+| 1       | 0    | 3       | 1         | 4    |
+| 1       | 0    | 3       | 2         | 3    |
+| 1       | 0    | 3       | 3         | 3    |
+| 1       | 0    | 3       | 4         | 1    |
 
 **Step 5** Create a page where a new game is selected or initialized
 - Randomizes the cards.
@@ -65,15 +76,15 @@ game_idxxx/ page displays
 
 Research radio buttons.
 
-Project plan ✓
-Create a new Django Project. ✓
-Create a new Virtual Environment. ✓
-Create two new tables with each one of the elements. ✓
-Create the migrations and migrate tables. ✓
+- Project plan ✓
+- Create a new Django Project. ✓
+- Create a new Virtual Environment. ✓
+- Create two new tables with each one of the elements. ✓
+- Create the migrations and migrate tables. ✓
 
 
-Create a randomized list of card ✓
-Display one card at a time ✓
+- Create a randomized list of card ✓
+- Display one card at a time ✓
 
 
 
@@ -96,6 +107,8 @@ how to shuffle a list in Python?
 Building Querries on Django.
 Submitting forms on Django
 
+``` bash
 . game_env/bin/activate
+```
 
 to run the environment with python 3 installed
