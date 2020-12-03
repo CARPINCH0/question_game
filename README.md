@@ -1,11 +1,13 @@
 <h1>MVP for board game on Django</h1>
 
-<h3>Summary:</h3>
+<h2>Summary</h2>
 Multiplayer game, where each player takes turns drawing a card from a pile, which asks if that player was X what X would they be and lists a number of Xs to vote on, players that voted on the selection with the most votes get a point.
 
 The idea is to build a prototype that doesn’t need to handle the operation in multiplayer to begin with, but can at least handle a random card being drawn, voting on a list and tallying those votes, attributing them to the different players.
 
-<h2> Execution</h2>
+<h2>How to use this file</h2>
+
+
 
 
 <h2>Design</h2>
